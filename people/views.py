@@ -4,6 +4,5 @@ from .models import ListPeople
 
 
 def index(request):
-    ListPeople_s = ListPeople.objects.all()
-
-    return render(request, 'pogoda/index.html', {'ListPeople_s': ListPeople_s})
+    lp = ListPeople.objects.all()
+    return render(request, 'people/index.html', {'lp': lp})
