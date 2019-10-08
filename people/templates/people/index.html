@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Адресная книга</title>
 </head>
 <body>
     <h1> заголовок </h1>
-    {% for ListPeople in lp %}
+    {% for lp_temp in lp %}
     <div>
-        <h2>{{ ListPeople.fam }}</h2>
-        <p>{{ ListPeople.name }}</p>
-        <p>{{ ListPeople.ot }}</p>
-        <p>{{ ListPeople.addr }}</p>
+        <p>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}&nbsp{{ lp_temp.addr }}</p>
     </div>
     {% endfor %}
 </body>

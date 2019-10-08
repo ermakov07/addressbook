@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=50)),
                 ('ot', models.CharField(max_length=50)),
                 ('addr', models.CharField(max_length=100)),
-                ('birthday', models.DateTimeField()),
+                ('birthday', models.DateField()),
                 ('note', models.TextField(blank=True, null=True)),
             ],
         ),
