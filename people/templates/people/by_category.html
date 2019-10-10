@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Адресная книга знаменитых людей</title>
+        <title>{{ current_category.name }} - Знаменитые люди </title>
     </head>
     <body>
-        <h1> Знаменитые люди </h1>
+        <hl>Знаменитые люди</hl>
+        <h2>Категория: {{ current_category.name }} </h2>
         <div>
             <a href="{% url 'index' %}">Главная</a>
             {% for category in categories %}
@@ -14,8 +15,9 @@
         </div>
         {% for lp_temp in lp %}
         <div>
-            <p>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}&nbsp{{ lp_temp.addr }}</p>
-            <p><a href="{% url 'by_category' lp_temp.pk %}">{{ lp_temp.category.name }}</a></p>
+            <h2>{{ lp_temp.fam }}</h2>
+            <p>{{ lp_temp.ot }}</p>
+            <p>{{ lp_temp.addr }}</p>
         </div>
         {% endfor %}
     </body>
