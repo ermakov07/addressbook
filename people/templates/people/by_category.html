@@ -7,6 +7,7 @@
     <body>
         <hl>Знаменитые люди</hl>
         <h2>Категория: {{ current_category.name }} </h2>
+        <a href="{% url 'add' %}">Добавить</a>
         <div>
             <a href="{% url 'index' %}">Главная</a>
             {% for category in categories %}
