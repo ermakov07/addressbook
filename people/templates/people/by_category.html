@@ -4,11 +4,12 @@
 
 {% block content %}
 <h2>Категория: {{ current_category.name }} </h2>
-{% for lp_temp in lp %}
-    <div>
-        <h2>{{ lp_temp.fam }}</h2>
-        <p>{{ lp_temp.ot }}</p>
-        <p>{{ lp_temp.addr }}</p>
-    </div>
-{% endfor %}
+<table>
+    {% for lp_temp in lp %}
+    <tr>
+        <td>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}</td>
+        <td>{{ lp_temp.addr }}&nbsp{{ lp_temp.birthday }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

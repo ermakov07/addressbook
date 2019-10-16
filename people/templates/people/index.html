@@ -1,10 +1,18 @@
 {% extends 'layout/basic.html' %}
 
 {% block content %}
-{% for lp_temp in lp %}
-    <div>
-        <p>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}&nbsp{{ lp_temp.addr }}</p>
-        <p><a href="{% url 'by_category' lp_temp.pk %}">{{ lp_temp.category.name }}</a></p>
-    </div>
+{% for category in categories %}
+    <p><a href="{% url 'by_category' category.pk %}">{{ category }}</a></p>
+    {% for lp_temp in lp %}
+        <table>
+            <tr>{% if lp_temp.category  ==  category %}</tr>
+            <tr>
+                <td>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}</td>
+                <td>{{ lp_temp.addr }}</td>
+                <td>{{ lp_temp.birthday }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    {% endfor %}
 {% endfor %}
 {% endblock %}
