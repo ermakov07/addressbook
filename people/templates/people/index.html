@@ -4,7 +4,7 @@
 {% for category in categories %}
     <p><a href="{% url 'by_category' category.pk %}">{{ category }}</a></p>
     {% for lp_temp in lp %}
-        <table>
+        <table id="tabl_index">
             <tr>{% if lp_temp.category  ==  category %}</tr>
             <tr>
                 <td>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}</td>

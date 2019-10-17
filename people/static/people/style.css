@@ -15,3 +15,12 @@ nav a {
 section {
     margin-left: 170px;
 }
+#tabl_index {
+    width: 80%;
+}
+#tabl_index td {
+    width: 250px;
+    border: 2px;
+    border-style: solid;
+    border-color: #F0F0F0;
+}
