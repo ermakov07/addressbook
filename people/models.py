@@ -22,6 +22,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return '/people/%s/' % self.pk
+
     class Meta:
         verbose_name_plural = 'Категории'
         verbose_name = 'категорию'
