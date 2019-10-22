@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .models import ListPeople
 from .models import Category
 from .forms import PeopleForm
+from .forms import CategoryForm
 
 
 class PeopleCreateView(CreateView):
@@ -16,6 +17,11 @@ class PeopleCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+class CategoryCreateView(CreateView):
+    template_name = 'people/create_category.html'
+    form_class = CategoryForm
+    success_url = reverse_lazy('index')
 
 
 def index(request):

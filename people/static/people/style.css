@@ -7,6 +7,7 @@ nav {
     font-size: 10pt;
     width: 150px;
     float: left;
+    padding-top: 30px;
 }
 nav a {
     display: block;
@@ -14,6 +15,9 @@ nav a {
 }
 section {
     margin-left: 170px;
+}
+section a:hover {
+    color: #5F0020;
 }
 #tabl_index {
     width: 80%;
@@ -23,4 +27,23 @@ section {
     border: 2px;
     border-style: solid;
     border-color: #F0F0F0;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding-left: 0px;
+}
+ul a {
+    text-decoration: none;
+}
+ul a:hover {
+    color: #5F00FF;
+}
+ul li {
+    display: inline;
+    width: 200px;
+    background: #FFE4C4;
+    margin-left: 10px;
+    padding: 5px;
 }
