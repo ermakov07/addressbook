@@ -18,10 +18,10 @@ class PeopleCreateView(CreateView):
         context['categories'] = Category.objects.all()
         return context
 
-class CategoryCreateView(CreateView):
+
+class CategoryCreateView(PeopleCreateView):
     template_name = 'people/create_category.html'
     form_class = CategoryForm
-    success_url = reverse_lazy('index')
 
 
 def index(request):
@@ -32,9 +32,9 @@ def index(request):
 
 
 def by_category(request, category_id):
-    lp = ListPeople.objects.filter(category=category_id)
     categories = Category.objects.all()
     current_category = Category.objects.get(pk=category_id)
+    lp = current_category.listpeople_set.all()
     context = {'lp': lp, 'categories': categories, 'current_category': current_category}
     return render(request, 'people/by_category.html', context)
 
