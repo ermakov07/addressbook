@@ -7,7 +7,11 @@
         <table id="tabl_index">
             <tr>{% if lp_temp.category  ==  category %}</tr>
             <tr>
-                <td>{{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}</td>
+                <td>
+                    <a href="{{ lp_temp.get_absolute_url }}">
+                        {{ lp_temp.fam }}&nbsp{{ lp_temp.name }}&nbsp{{ lp_temp.ot }}
+                    </a>
+                </td>
                 <td>{{ lp_temp.addr }}</td>
                 <td>{{ lp_temp.birthday }}</td>
             </tr>

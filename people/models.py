@@ -15,6 +15,9 @@ class ListPeople(models.Model):
         verbose_name = 'Запись адресной книги'
         ordering = ['fam']
 
+    def get_absolute_url(self):
+        return '/people/people/%s' % self.pk
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='категория')

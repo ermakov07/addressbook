@@ -38,3 +38,8 @@ def by_category(request, category_id):
     context = {'lp': lp, 'categories': categories, 'current_category': current_category}
     return render(request, 'people/by_category.html', context)
 
+
+def current_people(request, listpeople_id):
+    cur_people = ListPeople.objects.get(pk=listpeople_id)
+    context = {'cur_people': cur_people}
+    return render(request, 'people/people.html', context)

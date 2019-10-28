@@ -1,0 +1,13 @@
+{% extends 'layout/basic.html' %}
+
+{% block content %}
+    <h2>{{ cur_people.fam }}&nbsp{{ cur_people.name }}&nbsp{{ cur_people.ot }}</h2>
+    <table id="tabl_index">
+        <tr><td>Category</td><td>{{ cur_people.category }}</td></tr>
+        <tr><td>Address</td><td>{{ cur_people.addr }}</td></tr>
+        <tr><td>Birthday</td><td>{{ cur_people.birthday }}</td></tr>
+        <tr><td>Note</td><td>{{ cur_people.note }}</td></tr>
+    </table>
+    </br>
+    <a href="">To change the data</a>
+{% endblock %}
