@@ -6,7 +6,7 @@ from .models import Category
 
 class PeopleForm(ModelForm):
     """ Form for adding a new entry"""
-    class Meta:
+    class Meta(object):
         model = ListPeople
         fields = ('fam', 'name', 'ot', 'addr', 'birthday', 'note', 'category')
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from .models import ListPeople
@@ -17,6 +17,19 @@ class PeopleCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+class PeopleUpdateView(UpdateView):
+    form_class = PeopleForm
+    model = ListPeople
+    template_name = 'people/update.html'
+    success_url = reverse_lazy('index')
+
+
+class PeopleDeleteView(DeleteView):
+    form_class = PeopleForm
+    model = ListPeople
+    template_name = 'people/delete.html'
+    success_url = reverse_lazy('index')
 
 
 class CategoryCreateView(PeopleCreateView):

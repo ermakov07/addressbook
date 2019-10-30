@@ -1,8 +1,9 @@
-# cache
+#PyCharm
+.idea/workspace.xml
+
+#Django
+db.sqlite3
 __pycache__/
 
 # Backup files # 
 *.bak
-
-# migration
-people/migrations/
