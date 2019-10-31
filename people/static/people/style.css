@@ -47,3 +47,7 @@ ul li {
     margin-left: 10px;
     padding: 5px;
 }
+
+#people_edit th {
+    text-align: right;
+}
