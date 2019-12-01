@@ -1,9 +1,8 @@
-#PyCharm
-.idea/workspace.xml
-
-#Django
-db.sqlite3
+#PyCharm, Django
+.idea/
+venv/
 __pycache__/
+*.sqlite3
 
 # Backup files # 
 *.bak
