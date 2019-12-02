@@ -5,16 +5,16 @@
     <head>
         <link rel="stylesheet" type="text/css" href="{% static 'people/style.css' %}">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>{% block title %}Главная{% endblock %}- Адресная книга</title>
+        <title>{% block title %}Home{% endblock %}- Famous People</title>
     </head>
     <body>
         <header>
-            <h1> Знаменитые люди </h1>
+            <h1> Famous People </h1>
         </header>
         <ul>
-            <li><a href="{% url 'index' %}">Главная</a></li>
-            <li><a href="{% url 'add' %}">Добавить запись</a></li>
-            <li><a href="{% url 'create_category' %}">Добавить категорию</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'add' %}">Add person</a></li>
+            <li><a href="{% url 'create_category' %}">Add category</a></li>
         </ul>
         <nav>
             {% for category in categories %}

@@ -22,11 +22,11 @@ class CategoryForm(ModelForm):
     class Meta:
         model = Category
         fields = ('name',)
-        help_texts = {'name': 'В названии категории должны быть буквы и цифры'}
+        help_texts = {'name': 'The category name must contain letters and numbers'}
 
     def clean(self):
         errors = {}
         if re.search(r'\W', self.cleaned_data['name']) :
-            errors['name'] = 'Ошибка, в названии категории должны быть буквы и цифры'
+            errors['name'] = 'Error: the category name must contain letters and numbers'
         if errors:
             raise ValidationError(errors)
