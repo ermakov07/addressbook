@@ -7,6 +7,9 @@ from .models import Category
 from .forms import PeopleForm
 from .forms import CategoryForm
 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .serializers import RubricSerializer
 
 class PeopleCreateView(CreateView):
     template_name = 'people/create.html'
@@ -56,3 +59,10 @@ def current_people(request, listpeople_id):
     cur_people = ListPeople.objects.get(pk=listpeople_id)
     context = {'cur_people': cur_people}
     return render(request, 'people/people.html', context)
+
+@api_view(['GET'])
+def api_categories(request):
+    if request.method == 'GET':
+        categories = Category.objects.all()
+        serializer = RubricSerializer(categories, many=True)
+        return Response(serializer.data)
