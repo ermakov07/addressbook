@@ -23,7 +23,7 @@ SECRET_KEY = secrets['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [secrets['ALLOWED_HOSTS']]
 

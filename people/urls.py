@@ -5,11 +5,9 @@ from .views import PeopleCreateView
 from .views import CategoryCreateView
 from .views import PeopleUpdateView
 from .views import PeopleDeleteView
-from .views import api_categories
 
 
 urlpatterns = [
-    path('api/categories/', api_categories),
     path('people/<int:pk>/update/', PeopleUpdateView.as_view(), name='update'),
     path('people/<int:pk>/delete/', PeopleDeleteView.as_view(), name='delete'),
     path('people/<int:listpeople_id>/', current_people, name='people'),
